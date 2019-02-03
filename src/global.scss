@@ -9,3 +9,29 @@
 @import '~@ionic/angular/css/text-alignment.css';
 @import '~@ionic/angular/css/text-transformation.css';
 @import '~@ionic/angular/css/flex-utils.css';
+
+.logo{
+  height: 40px;
+}
+
+.text{
+  &-center{
+    text-align: center;
+  }
+}
+
+.icon{
+  &-2x{
+    font-size: 2em;
+  }
+}
+
+.bg{
+  &-15{
+    padding-top: 15vh;
+  }
+}
+
+.rounded-img{
+  border-radius: 10%;
+}

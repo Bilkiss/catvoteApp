@@ -1,4 +1,21 @@
-.welcome-card ion-img {
-  max-height: 35vh;
-  overflow: hidden;
+.welcome-card {
+  position: absolute;
+  top:0;
+  z-index: 10;
+  right: 0;
+  left: 0;
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid transparent;
+  box-shadow: none;
+  ion-img {
+    max-height: 35vh;
+    overflow: hidden;
+  }
+}
+ion-content{
+  .bg-light{
+    background-color:#f4f5f8;
+    height: 100vh;
+  }
 }
