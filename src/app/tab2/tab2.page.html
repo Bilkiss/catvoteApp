@@ -6,4 +6,26 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content></ion-content>
+<ion-content>
+  <ion-card class="welcome-card" *ngFor="let cat of catList; let i = index">
+    <ion-img [src]="cat.url"></ion-img>
+    <ion-card-header>
+      <ion-row>
+        <ion-col>
+          <ion-card-subtitle>Score: {{cat.score}}</ion-card-subtitle>
+        </ion-col>
+        <ion-col class="text-right p0" *ngIf="(cat.score) && i == 0">
+          <ion-icon class="icon-2x ion-color ion-color-gold" name="star"></ion-icon>
+        </ion-col>
+        <ion-col class="text-right p0" *ngIf="(cat.score) && i == 1">
+          <ion-icon class="icon-2x ion-color ion-color-silver" name="star"></ion-icon>
+        </ion-col>
+        <ion-col class="text-right p0" *ngIf="(cat.score) && i == 2">
+          <ion-icon class="icon-2x ion-color ion-color-bronze" name="star"></ion-icon>
+        </ion-col>
+      </ion-row>
+    </ion-card-header>
+  </ion-card>
+
+
+</ion-content>

@@ -36,7 +36,7 @@ export class Tab1Page implements OnInit{
     this.endpointService.getCats().subscribe( res => {
       this.catListObj = res;
       this.catList = this.catListObj.images;
-      console.log("catList: ", this.catList);
+      // console.log("catList: ", this.catList);
 
     }, error => {
       console.log("Error: ", error);
