@@ -6,4 +6,19 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content></ion-content>
+<ion-content>
+
+  <ion-card class="welcome-card" *ngFor="let cat of catVotedList; let i = index">
+    <ion-img class="img-fluid" [src]="cat.url"></ion-img>
+     <ion-card-header *ngIf="i == 0">
+       <ion-icon class="icon-2x ion-color ion-color-gold" name="heart"></ion-icon>
+     </ion-card-header>
+     <ion-card-header *ngIf="i == 1">
+       <ion-icon class="icon-2x ion-color ion-color-silver" name="heart"></ion-icon>
+     </ion-card-header>
+     <ion-card-header *ngIf="i == 2">
+       <ion-icon class="icon-2x ion-color ion-color-bronze" name="heart"></ion-icon>
+     </ion-card-header>
+  </ion-card>
+
+</ion-content>

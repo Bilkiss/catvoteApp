@@ -1,1 +1,10 @@
-
+.tab-selected{
+  .icon{
+    &-star{
+      color: #ffd700;
+    }
+    &-heart{
+      color: #f04141;
+    }
+  }
+}
