@@ -1,5 +1,7 @@
 {
   "name": "catvoteApp",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

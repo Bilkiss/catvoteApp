@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { Storage } from '@ionic/storage';
 
 import { EndpointService } from '../services/endpoint.service';
 
@@ -7,22 +8,34 @@ import { EndpointService } from '../services/endpoint.service';
   templateUrl: 'tab3.page.html',
   styleUrls: ['tab3.page.scss']
 })
-export class Tab3Page implements OnInit {
+export class Tab3Page {
 
   votesArray: any = [];
   catVotedList: any = [];
   catListObj:any;
   catList:any;
 
-  constructor(private endpointService: EndpointService){
+  constructor(private endpointService: EndpointService, private storage: Storage){
+
 
   }
 
-  ngOnInit(){
+  ionViewWillEnter(){
 
-    this.votesArray = localStorage.getItem("votesArray");
-    this.votesArray = (this.votesArray) ? JSON.parse(this.votesArray) : [];
-    console.log("votesArray click vote: ", this.votesArray);
+    this.storage.get("votesArray").then( res => {
+      console.log("votesArray res ", res);
+      if(res){
+        this.votesArray = res;
+      } else {
+        this.votesArray = [];
+      }
+    }, error => {
+      console.log("votesArray res ", error);
+      this.votesArray = [];
+    });
+    // this.votesArray = localStorage.getItem("votesArray");
+    // this.votesArray = (this.votesArray) ? JSON.parse(this.votesArray) : [];
+    console.log("votesArray onInit : ", this.votesArray);
 
     this.getListCat();
 

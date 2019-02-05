@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 import { EndpointService } from '../services/endpoint.service';
 
@@ -7,7 +7,7 @@ import { EndpointService } from '../services/endpoint.service';
   templateUrl: 'tab2.page.html',
   styleUrls: ['tab2.page.scss']
 })
-export class Tab2Page implements OnInit {
+export class Tab2Page {
 
   catListObj:any;
   catList:any;
@@ -16,7 +16,7 @@ export class Tab2Page implements OnInit {
 
   }
 
-  ngOnInit(){
+  ionViewWillEnter(){
     this.getListCat();
   }
 
